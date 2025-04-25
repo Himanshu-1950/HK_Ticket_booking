@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Show{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-header bg-gradient bg-primary text-white rounded-top-4 py-3">
+                    <h4 class="mb-0">
+                        <i class="bi bi-plus-circle me-2"></i>Add New Show
+                    </h4>
+                </div>
+                <div class="card-body p-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Show Name:</strong> <span class="text-muted">[Sample Show Name]</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Show Date:</strong> <span class="text-muted">[2025-04-30 19:30]</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Venue:</strong> <span class="text-muted">[City Auditorium]</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Total Seats:</strong> <span class="text-muted">[200]</span>
+                        </li>
+                    </ul>
+                    <div class="text-end mt-4">
+                        <a href="{% url 'show_list' %}" class="btn btn-outline-secondary rounded-pill">
+                            <i class="bi bi-arrow-left"></i> Back to Show List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking History</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+        }
+
+        li:nth-child(even) {
+            background-color: #dfe6e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Booking History</h2>
+        <ul>
+            {% for booking in bookings %}
+                <li>
+                    🎭 <strong>{{ booking.show.name }}</strong> – {{ booking.seats }} seat{{ booking.seats|pluralize }}
+                </li>
+            {% empty %}
+                <li>No bookings made yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
